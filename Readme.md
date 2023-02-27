@@ -76,3 +76,12 @@ TO DO
 Contact
 =======
 Open an issue, ask me on gihub [@mal1kc](http://www.github.com/mal1kc/)
+
+Resources used by mal1kc
+=======
+
+[custom usb hid device descriptor](https://notes.iopush.net/blog/2016/custom-usb-hid-device-descriptor-media-keyboard/)
+
+[usb hid codes](https://www.usb.org/hid)
+
+[Change USB VID & PID on Digispark](https://blog.spacehuhn.com/digispark-vid-pid)

@@ -11,6 +11,8 @@ Modified by Ernesto Sanchez to support multiple keyboard layouts
 
 Modified by Mümin Köykıran to support Turkish keyboard layouts 
 
+Modified by malik kökçan to support media keys with consumer page descriptors
+
 Supported layouts:
 * tr_tr
 * be_be
@@ -63,18 +65,14 @@ Version History
 ```
 (Date format: DD/MM/YYYY)
 * 8/7/2017 First commit
-
+* 27/2/2023 forked from ernesto-xload repo + added media keys (consumer page)
 ```
 
 TO DO
 =====
-- Test all layouts
 - Implement a solution for extended ascii characters for all layouts
-
+- fix media keys bugs
 
 Contact
 =======
-Open an issue, ask me on twitter to [@ernesto_xload](http://www.twitter.com/ernesto_xload/) or visit www.sanchezpano.info
-
-Turkish implemented and tested by:
-[@MrKoykiran](https://twitter.com/MrKoykiran/) or visit www.muminkoykiran.com
+Open an issue, ask me on gihub [@mal1kc](http://www.github.com/mal1kc/)

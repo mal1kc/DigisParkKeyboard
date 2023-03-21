@@ -14,9 +14,9 @@
 #include <string.h>
 
 #include "usbdrv.h"
-//#include "scancode-ascii-table.h"
+// #include "scancode-ascii-table.h"
 
-//#define kbd_es_es
+// #define kbd_es_es
 
 #ifdef kbd_be_be
 #include "digi_be_be.h"
@@ -53,8 +53,8 @@
 #endif
 
 // TODO: Work around Arduino 12 issues better.
-//#include <WConstants.h>
-//#undef int()
+// #include <WConstants.h>
+// #undef int()
 
 typedef uint8_t byte;
 
@@ -249,7 +249,8 @@ public:
       _delay_ms(5);
     }
 
-    reportBuff[0, 1] = 0; // unpress
+    reportBuff[0] = 0;
+    reportBuff[1] = 0; // unpress
     usbSetInterrupt(reportBuff, sizeof(reportBuff));
   }
 

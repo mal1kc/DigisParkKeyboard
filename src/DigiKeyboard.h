@@ -229,29 +229,20 @@ public:
   }
 
   void sendMediaKeyStroke(byte mediaKey) {
+    sendMediaKeyPres(mediaKey);
+    sendMediaKeyPres(0);
+  }
 
+  void sendMediaKeyPres(byte mediaKey) {
     while (!usbInterruptIsReady()) {
       usbPoll();
       _delay_ms(5);
     }
+    reportBuffer[0] = 2;
+    reportBuffer[1] = mediaKey;
 
-    byte reportBuff[2] = {0}; // create a new report buffer with 3 bytes
-
-    reportBuff[0] =
-        2; // start with report id // in my lib it will be 2 for consumer page
-    reportBuff[1] = mediaKey; // set mediakey bit to 1
-
-    usbSetInterrupt(reportBuff,
-                    sizeof(reportBuff)); // send the report buffer //
-    // unpress
-    while (!usbInterruptIsReady()) {
-      usbPoll();
-      _delay_ms(5);
-    }
-
-    reportBuff[0] = 0;
-    reportBuff[1] = 0; // unpress
-    usbSetInterrupt(reportBuff, sizeof(reportBuff));
+    usbSetInterrupt(reportBuffer,
+                    sizeof(reportBuffer)); // send the report buffer //
   }
 
   // sendKeyStroke: sends a key press AND release
